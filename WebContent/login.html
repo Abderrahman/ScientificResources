@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login ScienceSpace</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link href="formstyle/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="mainForm">
+	<div id="formHeader">
+			<h2 class="formInfo">Reviewer</h2>
+			<p class="formInfo">Remplissez le formulaire suivant pour s'authentifier: </p>
+	</div>
+
+	<!-- begin form -->
+	<form method="post" action="LoginReviewer" id="EntrepriseForm" onsubmit="return(validate());">
+		<ul class="mainForm" id="myForm">
+	
+			<li class="mainForm">
+				<label class="formFieldQuestion">Username:&nbsp;*</label>
+				<input class="mainForm" type="text" name="username" value="" size='25'>
+				<label id="label1" style="color:red;"></label>
+			</li>
+
+			<li class="mainForm">
+				<label class="formFieldQuestion">Mot de passe:&nbsp;*</label>
+				<input class="mainForm" type="password" name="password" value="" size='25'>
+				<label id="label2" style="color:red;"></label>
+			</li>
+			
+            <li class="mainForm">
+				<input  class="mainForm" type="submit" value="S'authentifier" />
+			</li>
+		  </ul>		
+		</form>
+	
+	<div id="formHeader">
+			<h2 class="formInfo">Rechercheur</h2>
+			<p class="formInfo">Remplissez le formulaire suivant pour s'authentifier: </p>
+	</div>
+
+	<!-- begin form -->
+	<form method="post" action="LoginRechercheur" id="AcheteurForm" onsubmit="return(validate2());">
+		<ul class="mainForm" id="myForm">
+	
+			<li class="mainForm">
+				<label class="formFieldQuestion">Username:&nbsp;*</label>
+				<input class="mainForm" type="text" name="username" value="" size='25'>
+				<label id="label3" style="color:red;"></label>
+			</li>
+
+			<li class="mainForm">
+				<label class="formFieldQuestion">Mot de passe:&nbsp;*</label>
+				<input class="mainForm" type="password" name="password" value="" size='25'>
+				<label id="label4" style="color:red;"></label>
+			</li>
+			
+            <li class="mainForm">
+				<input  class="mainForm" type="submit" value="S'authentifier" />
+			</li>
+		  </ul>		
+		</form>
+	</div>
+	
+	<div id="footer"></div>
+	
+			
+<script>
+
+var EntrepriseForm = document.getElementById("EntrepriseForm");
+var AcheteurForm = document.getElementById("AcheteurForm");
+
+function validate()
+{	
+	
+	document.getElementById("label1").innerHTML="";
+	document.getElementById("label2").innerHTML="";
+	
+   if( EntrepriseForm.username.value == "")
+   {
+	 EntrepriseForm.username.focus();
+     document.getElementById("label1").innerHTML="Veuillez saisir votre nom d'utilisateur !";
+	 return false;
+   }
+   
+   if( EntrepriseForm.password.value == "")
+   {
+	 EntrepriseForm.password.focus();
+     document.getElementById("label2").innerHTML="Veuillez saisir votre mot de passe !";
+	 return false;
+   }
+   
+   return( true );
+}
+
+function validate2()
+{	
+	
+	document.getElementById("label3").innerHTML="";
+	document.getElementById("label4").innerHTML="";
+	
+   if( AcheteurForm.username.value == "")
+   {
+	 AcheteurForm.username.focus();
+     document.getElementById("label3").innerHTML="Veuillez saisir votre nom d'utilisateur !";
+	 return false;
+   }
+   
+   if( AcheteurForm.password.value == "")
+   {
+	 AcheteurForm.password.focus();
+     document.getElementById("label4").innerHTML="Veuillez saisir votre mot de passe !";
+	 return false;
+   }
+   
+   return( true );
+}
+
+</script>
+
+</body>
+</html>
